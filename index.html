@@ -31,9 +31,10 @@
         }
 
         .logo img {
-            max-width: 500px;
+            max-width: 100%; /* Ajustado para que no se salga */
             height: auto;
-            margin-bottom: 10px;
+            margin-top: -20px; /* Sube la imagen */
+            margin-bottom: -30px; /* Sube el texto de abajo */
         }
 
         h1 {
@@ -65,18 +66,18 @@
             text-decoration: underline;
         }
 
-        .instagram-btn {
+        .instagram-icon {
             display: inline-block;
-            margin-top: 20px;
-			font-size: 40px;
-            color: #555;
+            margin-top: 10px;
+            font-size: 35px !important; /* Tamaño más visible */
+            color: #555 !important; /* Gris oscuro para que no sea azul */
             transition: transform 0.3s, color 0.3s;
-            text-decoration: none;
-		}
+            text-decoration: none !important;
+        }
 
         .instagram-icon:hover {
             transform: scale(1.2); 
-            color: #E1306C;
+            color: #E1306C !important; /* Color corporativo de Instagram al pasar el ratón */
         }
     </style>
 </head>
