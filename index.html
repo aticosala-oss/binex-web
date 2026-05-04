@@ -3,114 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Página en mantenimiento de BINeX Logistics">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-	<meta name="google-site-verification" content="5g5o3_7_CUUY88n7bod3Y-XVM1bzU9PA7m6JcvdvuJQ" />
-    <title>BINeX Logistics</title>
-
+    <meta name="description" content="BINeX Logistics - Soluciones de transporte y logística de última milla.">
+    <!-- Tu verificación de Google original -->
+    <meta name="google-site-verification" content="5g5o3_7_CUUY88n7bod3Y-XVM1bzU9PA7m6JcvdvuJQ" />
+    <!-- Tus iconos originales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>BINeX Logistics | Última Milla</title>
+    
     <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, #eef2f3, #dfe9f3);
-            color: #333;
+        :root {
+            --azul: #003366;
+            --naranja: #FF6600;
+            --blanco: #ffffff;
+            --gris: #f4f4f4;
+            --oscuro: #1a1a1a;
         }
 
-        .container {
-            text-align: center;
-            padding: 40px;
-            background: white;
-            border-radius: 20px;
-			border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            max-width: 500px;
-            width: 90%;
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: #333; line-height: 1.6; scroll-behavior: smooth; }
+        
+        /* Header */
+        header { background: var(--blanco); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; }
+        .logo img { height: 50px; }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--azul); font-weight: bold; transition: 0.3s; }
+        nav a:hover { color: var(--naranja); }
 
-        .logo img {
-            max-width: 100%; /* Ajustado para que no se salga */
-            height: auto;
-            margin-top: -20px; /* Sube la imagen */
-            margin-bottom: -30px; /* Sube el texto de abajo */
+        /* Portada Impactante */
+        .hero { 
+            background: linear-gradient(rgba(0,51,102,0.75), rgba(0,51,102,0.75)), 
+                        url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover; background-position: center;
+            height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; color: white; padding: 0 20px;
         }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; letter-spacing: 2px; }
+        .hero p { font-size: 1.4rem; max-width: 800px; margin-bottom: 30px; }
 
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-            color: #d32f2f;
-        }
+        /* Botón WhatsApp */
+        .btn-ws { background: #25d366; color: white; padding: 15px 35px; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.3); }
+        .btn-ws:hover { background: #1ebe57; transform: scale(1.05); }
+        .btn-ws i { margin-right: 10px; }
 
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #555;
-        }
+        /* Secciones */
+        section { padding: 80px 10%; }
+        h2 { color: var(--azul); border-left: 5px solid var(--naranja); padding-left: 15px; margin-bottom: 40px; font-size: 2rem; }
 
-        .contact-info {
-            margin-top: 25px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            font-weight: bold;
-            color: #003366;
-        }
+        /* Desplegables (Misión/Visión) */
+        details { background: var(--gris); margin-bottom: 20px; padding: 20px; border-radius: 12px; cursor: pointer; border: 1px solid #eee; transition: 0.3s; }
+        details:hover { border-color: var(--naranja); }
+        summary { font-weight: bold; color: var(--azul); font-size: 1.3rem; outline: none; list-style: none; display: flex; justify-content: space-between; align-items: center; }
+        summary::after { content: ' \f078'; font-family: "Font Awesome 6 Free"; font-weight: 900; transition: 0.3s; }
+        details[open] summary::after { transform: rotate(180deg); }
+        details p { padding-top: 15px; margin: 0; color: #555; font-size: 1.1rem; }
 
-        .contact-info a {
-            color: #003366;
-            text-decoration: none;
-        }
+        /* Aliados */
+        .aliados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .aliado-card { padding: 30px; background: white; border: 2px dashed #ccc; border-radius: 10px; text-align: center; color: #999; font-style: italic; }
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .instagram-icon {
-            display: inline-block;
-            margin-top: 10px;
-            font-size: 35px !important; /* Tamaño más visible */
-            color: #555 !important; /* Gris oscuro para que no sea azul */
-            transition: transform 0.3s, color 0.3s;
-            text-decoration: none !important;
-        }
-
-        .instagram-icon:hover {
-            transform: scale(1.2); 
-            color: #E1306C !important; /* Color corporativo de Instagram al pasar el ratón */
-        }
+        /* Footer */
+        footer { background: var(--oscuro); color: white; text-align: center; padding: 60px 10% 30px; }
+        .social-icons { margin-bottom: 20px; }
+        .social-icons a { color: white; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
+        .social-icons a:hover { color: var(--naranja); }
+        .copyright { font-size: 0.9rem; color: #888; margin-top: 20px; border-top: 1px solid #333; padding-top: 20px; }
     </style>
 </head>
-
 <body>
 
-    <div class="container">
-
-        <!-- LOGO (usa tu imagen aquí) -->
+    <header>
         <div class="logo">
-            <img src="BINEX_LOGO.PNG" alt="Logo BINeX Logistics">
+            <img src="logo.png" alt="BINeX Logo" onerror="this.src='https://via.placeholder.com/180x60?text=BINeX+LOGISTICS'">
         </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
 
-        <h1>Disculpe las molestias</h1>
-
-        <p>
-            Estamos trabajando para ofrecerle la mejor experiencia en servicios logísticos.
-        </p>
-
-        <div class="contact-info">
-            Contacto: 
-            <a href="mailto:contacto@binexlogistics.com">
-                contacto@binexlogistics.com
-            </a>
-        </div>
-
-        <!-- BOTÓN INSTAGRAM -->
-        <a class="instagram-icon" href="https://www.instagram.com/binex_logistics" target="_blank">
-			<i class="fab fa-instagram"></i>
-		</a>
-
+    <div class="hero" id="inicio">
+        <h1>BINeX LOGISTICS</h1>
+        <p>Expertos en última milla. Conectamos tu negocio con el mundo mediante entregas rápidas, seguras y eficientes.</p>
+        <a href="https://wa.me/0034642078810" class="btn-ws">
+            <i class="fab fa-whatsapp"></i> Solicitar Presupuesto
+        </a>
     </div>
+
+    <section id="nosotros">
+        <h2>¿Quiénes Somos?</h2>
+        
+        <details>
+            <summary>Nuestra Misión</summary>
+            <p>Transformar la logística de última milla a través de procesos optimizados y un compromiso inquebrantable con la puntualidad, permitiendo que nuestros clientes escalen sus negocios con total tranquilidad.</p>
+        </details>
+
+        <details>
+            <summary>Nuestra Visión</summary>
+            <p>Ser la red logística más confiable y sostenible de la región para el año 2030, integrando tecnología de vanguardia para reducir tiempos de entrega y el impacto ambiental.</p>
+        </details>
+
+        <details>
+            <summary>Nuestros Aliados Comerciales</summary>
+            <div class="aliados-grid">
+                <div class="aliado-card"><i class="fas fa-handshake"></i> Espacio para Aliado 1</div>
+                <div class="aliado-card"><i class="fas fa-handshake"></i> Espacio para Aliado 2</div>
+                <div class="aliado-card"><i class="fas fa-handshake"></i> Espacio para Aliado 3</div>
+            </div>
+        </details>
+    </section>
+
+    <footer id="contacto">
+        <div class="social-icons">
+            <a href="https://instagram.com/binex logistics" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="mailto:contacto@binexlogistics.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <h3>BINeX Logistics</h3>
+        <p>Dirección o Zona de Servicio | España</p>
+        <p><strong>contacto@binexlogistics.com</strong></p>
+        
+        <div class="copyright">
+            © 2026 BINeX Logistics. Todos los derechos reservados.
+        </div>
+    </footer>
 
 </body>
 </html>
